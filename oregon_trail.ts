@@ -85,7 +85,7 @@
             } else if (this.food < 20) {
                 this.isHealthy = false;
             }
-            return this.isHealthy;
+           return this.isHealthy;
         }
 
     }
@@ -187,17 +187,17 @@
     travelerFive.eat()
     console.log(`Name: ${travelerFive.name}  Food: ${travelerFive.food}  Health Status: ${travelerFive.isHealthy}`);
 
-    console.log(wagon.passengerArray)
-
-    let passengers = [travelerOne, travelerTwo, travelerThree, travelerFour, travelerFive];
+       let passengers = [travelerOne, travelerTwo, travelerThree, travelerFour, travelerFive];
 
     for (let passenger of passengers) {
         if (Math.random() > 0.5) {
-            console.log(`Add passenger ${passenger.name}? ${wagon.addPassenger(passenger)}`);
+            console.log(`${passenger.name} ${wagon.addPassenger(passenger)} to the wagon`);
         } else {
-            console.log(`Passenger ${passenger.name} is not on the wagon`)
+            console.log(`${passenger.name} is out of luck`)
         }
     }
+
+    //console.log(wagon.passengerArray)
 
     wagon.isQuarantined()
     console.log(`Is the wagon quarantined: ${wagon.isQuarantined()}`);
