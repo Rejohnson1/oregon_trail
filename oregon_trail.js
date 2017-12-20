@@ -59,6 +59,7 @@
         };
         Wagon.prototype.isQuarantined = function () {
             return this.passengerArray.some(function (traveler) { return !traveler.isHealthy; });
+            //javascript for each loop - uses "let" and "of"
             // for (let traveler of this.passengerArray) {
             //     if (!traveler.isHealthy) {
             //         return true
@@ -73,6 +74,10 @@
         };
         return Wagon;
     }());
+    //  alt version
+    // let sum: number = 0
+    // for (let traveler of this.passenterArray) {
+    //  sum += traveler.food
     /*
      Create wagon with an empty passenger list and a capacity of 4.
      Make 3 of 5 the travelers eat by calling their eat methods
@@ -83,23 +88,23 @@
      the console.log statements should not live inside any methods on the objects
     */
     var wagon = new Wagon(4, []);
-    var travelerOne = new Traveler(85, "Axl", true);
+    var travelerOne = new Traveler(60, "Axl", true);
     wagon.addPassenger(travelerOne);
     travelerOne.eat();
     console.log("Name: " + travelerOne.name + "  Food: " + travelerOne.food + "  Health Status: " + travelerOne.isHealthy); //need to add whether they were added to the wagon or not
-    var travelerTwo = new Traveler(90, "Slash", true);
+    var travelerTwo = new Traveler(70, "Slash", true);
     wagon.addPassenger(travelerTwo);
     travelerTwo.eat();
     console.log("Name: " + travelerTwo.name + "  Food: " + travelerTwo.food + "  Health Status: " + travelerTwo.isHealthy);
-    var travelerThree = new Traveler(50, "Duff", true);
+    var travelerThree = new Traveler(80, "Duff", true);
     wagon.addPassenger(travelerThree);
     travelerThree.hunt();
     console.log("Name: " + travelerThree.name + "  Food: " + travelerThree.food + "  Health Status: " + travelerThree.isHealthy);
-    var travelerFour = new Traveler(20, "Izzy", true);
+    var travelerFour = new Traveler(90, "Izzy", true);
     wagon.addPassenger(travelerFour);
     travelerFour.hunt();
     console.log("Name: " + travelerFour.name + "  Food: " + travelerFour.food + "  Health Status: " + travelerFour.isHealthy);
-    var travelerFive = new Traveler(60, "Steven", true);
+    var travelerFive = new Traveler(100, "Steven", true);
     wagon.addPassenger(travelerFive);
     travelerFive.eat();
     console.log("Name: " + travelerFive.name + "  Food: " + travelerFive.food + "  Health Status: " + travelerFive.isHealthy);
