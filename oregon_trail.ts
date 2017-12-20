@@ -114,8 +114,9 @@
 
         isQuarantined() { //need to add a condition to only look at the travelers if they are on the wagon
             return this.passengerArray.some(traveler => !traveler.isHealthy)
-
-            // for (let traveler of this.passengerArray) {
+        
+            //javascript for each loop - uses "let" and "of"
+           // for (let traveler of this.passengerArray) {
             //     if (!traveler.isHealthy) {
             //         return true
             //     }
@@ -129,6 +130,14 @@
                 .reduce((acc, val) => acc + val);
         }
     }
+        //  alt version
+         // let sum: number = 0
+         // for (let traveler of this.passenterArray) {
+        //  sum += traveler.food
+
+        }
+
+
 
     /*
      Create wagon with an empty passenger list and a capacity of 4.
