@@ -112,7 +112,7 @@
             }
         }
 
-        isQuarantined() { //need to add a condition to only look at the travelers if they are on the wagon
+        isQuarantined() { 
             return this.passengerArray.some(traveler => !traveler.isHealthy)
 
             //javascript for each loop - uses "let" and "of"
@@ -150,27 +150,27 @@
     */
 
     const wagon = new Wagon(4, []);
-    const travelerOne = new Traveler(60, "Axl", true);
+    const travelerOne = new Traveler(Math.round(Math.random() * 100), "Axl", true);
     wagon.addPassenger(travelerOne)
     travelerOne.eat()
-    console.log(`Name: ${travelerOne.name}  Food: ${travelerOne.food}  Health Status: ${travelerOne.isHealthy}`); //need to add whether they were added to the wagon or not
+    console.log(`Name: ${travelerOne.name}  Food: ${travelerOne.food}  Health Status: ${travelerOne.isHealthy}`); 
 
-    const travelerTwo = new Traveler(70, "Slash", true);
+    const travelerTwo = new Traveler(Math.round(Math.random() * 100), "Slash", true);
     wagon.addPassenger(travelerTwo)
     travelerTwo.eat()
     console.log(`Name: ${travelerTwo.name}  Food: ${travelerTwo.food}  Health Status: ${travelerTwo.isHealthy}`);
 
-    const travelerThree = new Traveler(80, "Duff", true);
+    const travelerThree = new Traveler(Math.round(Math.random() * 100), "Duff", true);
     wagon.addPassenger(travelerThree)
     travelerThree.hunt()
     console.log(`Name: ${travelerThree.name}  Food: ${travelerThree.food}  Health Status: ${travelerThree.isHealthy}`);
 
-    const travelerFour = new Traveler(90, "Izzy", true);
+    const travelerFour = new Traveler(Math.round(Math.random() * 100), "Izzy", true);
     wagon.addPassenger(travelerFour)
     travelerFour.hunt()
     console.log(`Name: ${travelerFour.name}  Food: ${travelerFour.food}  Health Status: ${travelerFour.isHealthy}`);
 
-    const travelerFive = new Traveler(100, "Steven", true);
+    const travelerFive = new Traveler(Math.round(Math.random() * 100), "Steven", true);
     wagon.addPassenger(travelerFive)
     travelerFive.eat()
     console.log(`Name: ${travelerFive.name}  Food: ${travelerFive.food}  Health Status: ${travelerFive.isHealthy}`);

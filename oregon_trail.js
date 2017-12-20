@@ -88,23 +88,23 @@
      the console.log statements should not live inside any methods on the objects
     */
     var wagon = new Wagon(4, []);
-    var travelerOne = new Traveler(60, "Axl", true);
+    var travelerOne = new Traveler(Math.round(Math.random() * 100), "Axl", true);
     wagon.addPassenger(travelerOne);
     travelerOne.eat();
-    console.log("Name: " + travelerOne.name + "  Food: " + travelerOne.food + "  Health Status: " + travelerOne.isHealthy); //need to add whether they were added to the wagon or not
-    var travelerTwo = new Traveler(70, "Slash", true);
+    console.log("Name: " + travelerOne.name + "  Food: " + travelerOne.food + "  Health Status: " + travelerOne.isHealthy);
+    var travelerTwo = new Traveler(Math.round(Math.random() * 100), "Slash", true);
     wagon.addPassenger(travelerTwo);
     travelerTwo.eat();
     console.log("Name: " + travelerTwo.name + "  Food: " + travelerTwo.food + "  Health Status: " + travelerTwo.isHealthy);
-    var travelerThree = new Traveler(80, "Duff", true);
+    var travelerThree = new Traveler(Math.round(Math.random() * 100), "Duff", true);
     wagon.addPassenger(travelerThree);
     travelerThree.hunt();
     console.log("Name: " + travelerThree.name + "  Food: " + travelerThree.food + "  Health Status: " + travelerThree.isHealthy);
-    var travelerFour = new Traveler(90, "Izzy", true);
+    var travelerFour = new Traveler(Math.round(Math.random() * 100), "Izzy", true);
     wagon.addPassenger(travelerFour);
     travelerFour.hunt();
     console.log("Name: " + travelerFour.name + "  Food: " + travelerFour.food + "  Health Status: " + travelerFour.isHealthy);
-    var travelerFive = new Traveler(100, "Steven", true);
+    var travelerFive = new Traveler(Math.round(Math.random() * 100), "Steven", true);
     wagon.addPassenger(travelerFive);
     travelerFive.eat();
     console.log("Name: " + travelerFive.name + "  Food: " + travelerFive.food + "  Health Status: " + travelerFive.isHealthy);
