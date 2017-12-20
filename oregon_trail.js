@@ -86,23 +86,23 @@
     var travelerOne = new Traveler(85, "Axl", true);
     wagon.addPassenger(travelerOne);
     travelerOne.eat();
-    console.log("Name: " + travelerOne.name + "  Food: " + travelerOne.food + " + Health Status: " + travelerOne.isHealthy); //need to add whether they were added to the wagon or not
+    console.log("Name: " + travelerOne.name + "  Food: " + travelerOne.food + "  Health Status: " + travelerOne.isHealthy); //need to add whether they were added to the wagon or not
     var travelerTwo = new Traveler(90, "Slash", true);
     wagon.addPassenger(travelerTwo);
     travelerTwo.eat();
-    console.log("Name: " + travelerTwo.name + "  Food: " + travelerTwo.food + " + Health Status: " + travelerTwo.isHealthy);
+    console.log("Name: " + travelerTwo.name + "  Food: " + travelerTwo.food + "  Health Status: " + travelerTwo.isHealthy);
     var travelerThree = new Traveler(50, "Duff", true);
     wagon.addPassenger(travelerThree);
     travelerThree.hunt();
-    console.log("Name: " + travelerThree.name + "  Food: " + travelerThree.food + " + Health Status: " + travelerThree.isHealthy);
+    console.log("Name: " + travelerThree.name + "  Food: " + travelerThree.food + "  Health Status: " + travelerThree.isHealthy);
     var travelerFour = new Traveler(20, "Izzy", true);
     wagon.addPassenger(travelerFour);
     travelerFour.hunt();
-    console.log("Name: " + travelerFour.name + "  Food: " + travelerFour.food + " + Health Status: " + travelerFour.isHealthy);
-    var travelerFive = new Traveler(20, "Steven", true);
+    console.log("Name: " + travelerFour.name + "  Food: " + travelerFour.food + "  Health Status: " + travelerFour.isHealthy);
+    var travelerFive = new Traveler(60, "Steven", true);
     wagon.addPassenger(travelerFive);
     travelerFive.eat();
-    console.log("Name: " + travelerFive.name + "  Food: " + travelerFive.food + " + Health Status: " + travelerFive.isHealthy);
+    console.log("Name: " + travelerFive.name + "  Food: " + travelerFive.food + "  Health Status: " + travelerFive.isHealthy);
     console.log(wagon.passengerArray);
     wagon.isQuarantined();
     console.log("Is the wagon quarantined: " + wagon.isQuarantined());
