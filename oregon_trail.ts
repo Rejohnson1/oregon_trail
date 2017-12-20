@@ -82,7 +82,10 @@
         eat(): boolean {
             if (this.food >= 20) {
                 this.food = this.food - 20;
-            } else if (this.food < 20) {
+                if(this.food < 20){
+                    this.isHealthy = false;
+                }
+            } else {
                 this.isHealthy = false;
             }
            return this.isHealthy;
@@ -111,98 +114,50 @@
             return message;
         };
 
-
         isQuarantined() { 
             return this.passengerArray.some(traveler => !traveler.isHealthy)
-
-            //javascript for each loop - uses "let" and "of"
-            // for (let traveler of this.passengerArray) {
-            //     if (!traveler.isHealthy) {
-            //         return true
-            //     }
-            // }
-            // return false
-        }
-
-        getFood() { //need to add a condition to only add the food for those folks on the wagon
-            return this.passengerArray
-                .map(traveler => traveler.getfood())
-                .reduce((acc, val) => acc + val);
-        }
-    }
-    //  alt version
-    // let sum: number = 0
-    // for (let traveler of this.passenterArray) {
-    //  sum += traveler.food
-
-
-
-
-
-    /*
-     Create wagon with an empty passenger list and a capacity of 4.
-     Make 3 of 5 the travelers eat by calling their eat methods
-     Make the remaining 2 travelers hunt
-     Run the isQuarantined method for the wagon 
-     Run the getFood method for the wagon
-     the return values of all the methods should be displayed in the console using console.log()
-     the console.log statements should not live inside any methods on the objects 
-    */
-
-    
+         }
+        
+        getFood(): number {
+            let sum: number = 0;
+            for (let traveler of this.passengerArray) {
+                sum += traveler.food;
+            }
+            return sum;
+        };
+     }
+        
     const wagon = new Wagon(4, []);
-
-    // let passengers = [travelerOne, travelerTwo, travelerThree, travelerFour, travelerFive]
-
-    // for (let passenger of passengers) {
-    //     if (Math.random() > 0.5 {
-    //         wagon.addPassenger(passenger);
-    //     })  
-
-    // }
-
-
     const travelerOne = new Traveler(Math.round(Math.random() * 100), "Axl", true);
-    //wagon.addPassenger(travelerOne)
-    travelerOne.eat()
-    console.log(`Name: ${travelerOne.name}  Food: ${travelerOne.food}  Health Status: ${travelerOne.isHealthy}`); 
-
     const travelerTwo = new Traveler(Math.round(Math.random() * 100), "Slash", true);
-    //wagon.addPassenger(travelerTwo)
-    travelerTwo.eat()
-    console.log(`Name: ${travelerTwo.name}  Food: ${travelerTwo.food}  Health Status: ${travelerTwo.isHealthy}`);
-
     const travelerThree = new Traveler(Math.round(Math.random() * 100), "Duff", true);
-    //wagon.addPassenger(travelerThree)
-    travelerThree.hunt()
-    console.log(`Name: ${travelerThree.name}  Food: ${travelerThree.food}  Health Status: ${travelerThree.isHealthy}`);
-
     const travelerFour = new Traveler(Math.round(Math.random() * 100), "Izzy", true);
-    //wagon.addPassenger(travelerFour)
-    travelerFour.hunt()
-    console.log(`Name: ${travelerFour.name}  Food: ${travelerFour.food}  Health Status: ${travelerFour.isHealthy}`);
-
     const travelerFive = new Traveler(Math.round(Math.random() * 100), "Steven", true);
-    //wagon.addPassenger(travelerFive)
-    travelerFive.eat()
-    console.log(`Name: ${travelerFive.name}  Food: ${travelerFive.food}  Health Status: ${travelerFive.isHealthy}`);
 
-       let passengers = [travelerOne, travelerTwo, travelerThree, travelerFour, travelerFive];
+    travelerOne.eat()
+    travelerTwo.eat()
+    travelerThree.eat()
+    travelerFour.hunt()
+    travelerFive.hunt()
+    console.log(`Name: ${travelerOne.name}  Food: ${travelerOne.food} Health: ${ travelerOne.isHealthy}`); 
+    console.log(`Name: ${travelerTwo.name}  Food: ${travelerTwo.food} Health: ${ travelerTwo.isHealthy}`);
+    console.log(`Name: ${travelerThree.name}  Food: ${travelerThree.food} Health: ${travelerThree.isHealthy}`);
+    console.log(`Name: ${travelerFour.name}  Food: ${travelerFour.food} Health: ${travelerFour.isHealthy}`);
+    console.log(`Name: ${travelerFive.name}  Food: ${travelerFive.food} Health: ${travelerFive.isHealthy}`);
 
-    for (let passenger of passengers) {
-        if (Math.random() > 0.5) {
-            console.log(`${passenger.name} ${wagon.addPassenger(passenger)} to the wagon`);
-        } else {
-            console.log(`${passenger.name} is out of luck`)
-        }
-    }
+    let passengers = [travelerOne, travelerTwo, travelerThree, travelerFour, travelerFive];
+     for (let passenger of passengers) {
+         if (Math.random() > 0.5) {
+             console.log(`${passenger.name} ${wagon.addPassenger(passenger)}`);
+         } else {
+             console.log(`${passenger.name} is walking`)
+         }
+     }
 
-    //console.log(wagon.passengerArray)
+   //console.log(passengers)
 
-    wagon.isQuarantined()
     console.log(`Is the wagon quarantined: ${wagon.isQuarantined()}`);
 
-    wagon.getFood()
     console.log(`Wagon Food: ${wagon.getFood()}`);
 
 })();
